@@ -9,32 +9,20 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
-    <group name="arm">
-        <joint name="drive0_joint" />
-        <joint name="drive1_joint" />
-        <joint name="drive2_joint" />
-        <joint name="drive3_joint" />
-        <joint name="drive4_joint" />
-        <joint name="drive5_joint" />
-    </group>
-    <group name="gripper">
-        <link name="effector" />
+    <group name="manipulator">
+        <chain base_link="base" tip_link="effector" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="home" group="arm">
-        <joint name="drive0_joint" value="-1.6402" />
-        <joint name="drive1_joint" value="0.5988" />
-        <joint name="drive2_joint" value="2.0047" />
-        <joint name="drive3_joint" value="-0.0781" />
-        <joint name="drive4_joint" value="1.4319" />
-        <joint name="drive5_joint" value="1.7444" />
+    <group_state name="home" group="manipulator">
+        <joint name="drive0_joint" value="-1.484" />
+        <joint name="drive1_joint" value="0.6509" />
+        <joint name="drive2_joint" value="2.3692" />
+        <joint name="drive3_joint" value="0.1302" />
+        <joint name="drive4_joint" value="1.2757" />
+        <joint name="drive5_joint" value="0" />
     </group_state>
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="vacuum_gripper" parent_link="drive5_distal" group="gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="arm_mount" type="planar" parent_frame="odom" child_link="base" />
-    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
-    <passive_joint name="arm_mount" />
+    <virtual_joint name="mount" type="fixed" parent_frame="base" child_link="base" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base" link2="drive0" reason="Adjacent" />
     <disable_collisions link1="base" link2="drive0_distal" reason="Never" />
