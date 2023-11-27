@@ -4,31 +4,37 @@
 joint_limits:
   drive0_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
   drive1_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
   drive2_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
   drive3_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
   drive4_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
   drive5_joint:
     has_velocity_limits: true
-    max_velocity: 4.25
+    #max_velocity: 0.425
+    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0

@@ -1,0 +1,5 @@
+controller_list:
+  - name: /robco_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints: [drive0_joint, drive1_joint, drive2_joint, drive3_joint, drive4_joint, drive5_joint]
